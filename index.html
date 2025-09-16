@@ -165,7 +165,7 @@
 
 .theme-toggle {
     position: fixed;
-    top: 3px;
+    top: 70px;
     right: 20px;
     z-index: 10001; /* Чуть ниже, чем у навигации */
     background: var(--navbar-bg);
@@ -748,7 +748,7 @@
         }
 
         /* Адаптивность */
-@media (max-width: 768px) {
+    @media (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -760,7 +760,7 @@
         text-align: center;
         margin: 15px 0;
     }
-
+    
     .logo {
         font-size: 3rem;
         text-align: center;
@@ -783,15 +783,45 @@
         font-size: 14px;
     }
     
-    /* Улучшение для навигации */
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
+    /* Улучшение для навигации - горизонтальная прокрутка */
+    .fixed-navbar {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        justify-content: flex-start;
+        padding: 10px 5px;
+        white-space: nowrap;
     }
     
-    nav a {
-        padding: 8px 12px;
+    .fixed-navbar::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .fixed-navbar button {
+        flex-shrink: 0;
+        padding: 10px 16px;
         font-size: 0.9rem;
+        margin: 0 5px;
+    }
+    
+    /* Перемещение иконки темы под навигацию */
+    .theme-toggle {
+        position: fixed;
+        top: 65px; /* Располагаем под навигационной панелью */
+        right: 20px;
+        z-index: 10001;
+        background: var(--navbar-bg);
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(100, 150, 255, 0.2);
+        color: var(--text-color);
+        opacity: 1; /* Всегда видима на мобильных */
     }
     
     /* Улучшение кнопок */
@@ -805,8 +835,16 @@
     .desktop-only {
         display: none;
     }
+    
+    /* Индикатор прокрутки для навигации */
+    .scroll-indicator {
+        text-align: center;
+        margin-top: 5px;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+        display: block;
+    }
 }
-
 /* Добавьте также эти медиа-запросы */
 @media (max-width: 480px) {
     h1 {
@@ -814,6 +852,18 @@
     }
     .logo {
         font-size: 2.5rem;
+    }
+    
+    .fixed-navbar button {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+    
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        top: 60px;
+        right: 15px;
     }
 }
 
@@ -823,6 +873,11 @@
     }
     h1 {
         font-size: 1.3rem;
+    }
+    
+    .fixed-navbar button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
     }
 }
 
@@ -936,13 +991,14 @@
 </head>
 <body>
     <div class="progress-bar" id="progressBar"></div>
-    <div class="fixed-navbar" id="fixedNavbar">
-        <button id="home-button">Главная</button>
-        <button id="gallery-button">Галерея художников</button>
-        <button id="favorites-button">Избранное</button>
-        <button id="compare-button">Сравнить</button>
-        <button id="quiz-button">Викторина</button>
-    </div>
+<div class="fixed-navbar" id="fixedNavbar">
+    <button id="home-button">Главная</button>
+    <button id="gallery-button">Галерея художников</button>
+    <button id="favorites-button">Избранное</button>
+    <button id="compare-button">Сравнить</button>
+    <button id="quiz-button">Викторина</button>
+</div>
+<div class="scroll-indicator">← прокрутите в сторону →</div>
 
     <div class="modal" id="quizModal">
         <div class="modal-content">
@@ -1028,6 +1084,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Основные элементы DOM
+            const navContainer = document.querySelector('.fixed-navbar');
+            const scrollIndicator = document.querySelector('.scroll-indicator');
             const progressBar = document.getElementById('progressBar');
             const fixedNavbar = document.getElementById('fixedNavbar');
             const homeButton = document.getElementById('home-button');
@@ -1043,6 +1101,18 @@
             const closeArtistModal = document.getElementById('closeArtistModal');
             const artistDetails = document.getElementById('artistDetails');
             const container = document.getElementById('cards-container');
+
+        function checkNavScroll() {
+        if (navContainer.scrollWidth > navContainer.offsetWidth) {
+            scrollIndicator.style.display = 'block';
+        } else {
+            scrollIndicator.style.display = 'none';
+        }
+        }
+        // Проверяем при загрузке и изменении размера окна
+    checkNavScroll();
+    window.addEventListener('resize', checkNavScroll);
+
             // Цвета для эффектов
             const colors = ['#FF5252', '#FF7B25', '#FFD166', '#06D6A0', '#118AB2', '#9D4EDD'];
             // Данные художников (50 уникальных художников)

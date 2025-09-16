@@ -748,7 +748,7 @@
         }
 
         /* Адаптивность */
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -836,15 +836,12 @@
         display: none;
     }
     
-    /* Индикатор прокрутки для навигации */
+    /* Убираем индикатор прокрутки */
     .scroll-indicator {
-        text-align: center;
-        margin-top: 5px;
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 0.9rem;
-        display: block;
+        display: none !important;
     }
 }
+
 /* Добавьте также эти медиа-запросы */
 @media (max-width: 480px) {
     h1 {
@@ -1083,8 +1080,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Основные элементы DOM
-            const navContainer = document.querySelector('.fixed-navbar');
-            const scrollIndicator = document.querySelector('.scroll-indicator');
             const progressBar = document.getElementById('progressBar');
             const fixedNavbar = document.getElementById('fixedNavbar');
             const homeButton = document.getElementById('home-button');
@@ -1100,18 +1095,6 @@
             const closeArtistModal = document.getElementById('closeArtistModal');
             const artistDetails = document.getElementById('artistDetails');
             const container = document.getElementById('cards-container');
-
-        function checkNavScroll() {
-        if (navContainer.scrollWidth > navContainer.offsetWidth) {
-            scrollIndicator.style.display = 'block';
-        } else {
-            scrollIndicator.style.display = 'none';
-        }
-        }
-        // Проверяем при загрузке и изменении размера окна
-    checkNavScroll();
-    window.addEventListener('resize', checkNavScroll);
-
             // Цвета для эффектов
             const colors = ['#FF5252', '#FF7B25', '#FFD166', '#06D6A0', '#118AB2', '#9D4EDD'];
             // Данные художников (50 уникальных художников)

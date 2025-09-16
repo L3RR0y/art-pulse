@@ -2004,11 +2004,24 @@
                 searchButton.addEventListener('click', handleSearch);
                 searchInput.addEventListener('input', handleAutocomplete);
                 themeToggle.addEventListener('click', toggleTheme);
-                closeArtistModal.addEventListener('click', () => artistModal.style.display = 'none');
-
+                closeArtistModal.addEventListener('click', () => {
+                artistModal.style.display = 'none';
+    
+                // Показываем иконку темы снова при закрытии модального окна
+                if (window.innerWidth <= 768) {
+                themeToggle.style.display = 'flex';
+                    }
+                });
                 // Закрытие модальных окон при клике вне их
                 window.addEventListener('click', (e) => {
-                    if (e.target === artistModal) artistModal.style.display = 'none';
+                if (e.target === artistModal) {
+                artistModal.style.display = 'none';
+        
+                // Показываем иконку темы снова при закрытии модального окна
+                if (window.innerWidth <= 768) {
+                themeToggle.style.display = 'flex';
+                        }
+                    }
                 });
                 // Эффект при клике
                 document.body.addEventListener('click', createClickEffect);
@@ -2602,6 +2615,10 @@ function openPictureModal(pictureUrl, works) {
 function closePicture() {
     pictureModal.style.display = 'none';
     document.body.style.overflow = '';
+    // Показываем иконку темы снова при закрытии модального окна
+    if (window.innerWidth <= 768) {
+        themeToggle.style.display = 'flex';
+    }
 }
 
 // Переключение на предыдущую картину
@@ -2629,6 +2646,11 @@ nextPicture.addEventListener('click', showNextPicture);
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape' && pictureModal.style.display === 'block') {
         closePicture();
+        
+        // Показываем иконку темы снова при закрытии модального окна
+        if (window.innerWidth <= 768) {
+            themeToggle.style.display = 'flex';
+        }
     }
 });
 

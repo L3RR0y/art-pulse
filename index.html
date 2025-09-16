@@ -822,6 +822,7 @@
         border: 1px solid rgba(100, 150, 255, 0.2);
         color: var(--text-color);
         opacity: 1; /* Всегда видима на мобильных */
+        transition: opacity 0.3s ease; /* Добавляем плавное исчезновение */
     }
     
     /* Улучшение кнопок */
@@ -2491,6 +2492,135 @@ function updateWorkItemHandlers() {
         });
     });
 }
+
+// Функции для работы с деталями художника
+function showArtistDetails(artistName) {
+    const artist = artistsData.find(a => a.name === artistName);
+    if (!artist) return;
+
+    // Скрываем иконку темы на мобильных устройствах
+    if (window.innerWidth <= 768) {
+        themeToggle.style.display = 'none';
+    }
+
+    artistDetails.innerHTML = `
+        <div class="artist-header">
+            <div class="artist-image">
+                <img src="${artist.image}" alt="${artist.name}">
+            </div>
+            <div class="artist-info">
+                <h2 class="artist-name">${artist.name}</h2>
+                <p class="artist-style">${artist.style}</p>
+                <p class="artist-bio">${artist.bio || 'Информация о художнике скоро будет добавлена.'}</p>
+                ${artist.facts ? `
+                    <div class="artist-facts">
+                        <h3>Интересные факты:</h3>
+                        <ul>
+                            ${artist.facts.map(fact => `<li>${fact}</li>`).join('')}
+                        </ul>
+                    </div>
+                ` : ''}
+            </div>
+        </div>
+        ${artist.works ? `
+            <div class="artist-works">
+                <h3>Известные работы:</h3>
+                <div class="works-grid">
+                    ${artist.works.map(work => `
+                        <div class="work-item">
+                            <img src="${work.image}" alt="${work.title}">
+                            <div class="work-title">${work.title} (${work.year})</div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        ` : ''}
+    `;
+
+    artistModal.style.display = 'block';
+    updateWorkItemHandlers();
+}
+
+// Функция для закрытия модального окна художника (дополненная)
+function closeArtistModal() {
+    artistModal.style.display = 'none';
+    
+    // Показываем иконку темы снова при закрытии модального окна
+    if (window.innerWidth <= 768) {
+        themeToggle.style.display = 'flex';
+    }
+}
+
+// Обновите обработчик закрытия модального окна
+closeArtistModal.addEventListener('click', closeArtistModal);
+
+// Также обрабатываем закрытие по клику вне модального окна
+window.addEventListener('click', (e) => {
+    if (e.target === artistModal) {
+        closeArtistModal();
+    }
+});
+
+// Для модального окна с картинкой
+function openPictureModal(pictureUrl, works) {
+    currentArtistWorks = works;
+    currentPictureIndex = works.findIndex(work => work.image === pictureUrl);
+    fullscreenPicture.src = pictureUrl;
+    pictureModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    
+    // Скрываем иконку темы на мобильных устройствах
+    if (window.innerWidth <= 768) {
+        themeToggle.style.display = 'none';
+    }
+}
+
+function closePicture() {
+    pictureModal.style.display = 'none';
+    document.body.style.overflow = '';
+    
+    // Показываем иконку темы снова при закрытии модального окна
+    if (window.innerWidth <= 768) {
+        themeToggle.style.display = 'flex';
+    }
+}
+
+// Для модального окна викторины
+function startQuiz() {
+    usedQuestionIds.clear();
+    score = 0;
+    currentQuestionIndex = 0;
+    quizQuestions = generateRandomQuestions(15);
+    showQuestion();
+    quizModal.style.display = 'block';
+    
+    // Скрываем иконку темы на мобильных устройствах
+    if (window.innerWidth <= 768) {
+        themeToggle.style.display = 'none';
+    }
+}
+
+// Обновите обработчик закрытия викторины
+closeQuizModal.addEventListener('click', () => {
+    quizModal.style.display = 'none';
+    
+    // Показываем иконку темы снова при закрытии модального окна
+    if (window.innerWidth <= 768) {
+        themeToggle.style.display = 'flex';
+    }
+});
+
+// Также для викторины по клику вне окна
+window.addEventListener('click', (e) => {
+    if (e.target === quizModal) {
+        quizModal.style.display = 'none';
+        
+        // Показываем иконку темы снова при закрытии модального окна
+        if (window.innerWidth <= 768) {
+            themeToggle.style.display = 'flex';
+        }
+    }
+});
 
             function showResults() {
                 const percentage = Math.round((score / quizQuestions.length) * 100);

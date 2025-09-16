@@ -751,31 +751,85 @@
 @media (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;
-        gap: 15px;
-        padding: 10px;
+        gap: 12px;
+        padding: 8px;
+    }
+
+    .card {
+        height: 320px; /* Уменьшаем высоту карточки */
+        margin-bottom: 8px; /* Уменьшаем отступ снизу */
+    }
+
+    .card-image {
+        height: 150px; /* Уменьшаем высоту изображения */
+    }
+
+    .card-content {
+        padding: 15px; /* Уменьшаем внутренние отступы */
+    }
+
+    .card-title {
+        font-size: 1.2rem; /* Уменьшаем размер заголовка */
+        margin-bottom: 8px;
+    }
+
+    .card-description {
+        font-size: 0.9rem; /* Уменьшаем размер текста */
+        line-height: 1.4;
+        max-height: 3.5em; /* Уменьшаем максимальную высоту текста */
+    }
+
+    .card-footer {
+        padding-top: 12px;
+        margin-top: 10px;
+    }
+
+    .card-tag {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+    }
+
+    .card-date {
+        font-size: 0.8rem;
+    }
+
+    .favorite-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .compare-checkbox {
+        width: 18px;
+        height: 18px;
     }
 
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         text-align: center;
-        margin: 15px 0;
+        margin: 12px 0;
     }
     
     .logo {
-        font-size: 3rem;
+        font-size: 2.8rem;
         text-align: center;
     }
 
     .artist-header {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
         text-align: center;
+        padding: 15px;
     }
 
     .artist-image {
         width: 100%;
-        max-width: 300px;
+        max-width: 250px;
         margin: 0 auto;
+    }
+
+   .artist-info h2 {
+        font-size: 1.6rem;
     }
 
     /* Дополнительные часто необходимые правки */
@@ -789,7 +843,7 @@
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         justify-content: flex-start;
-        padding: 10px 5px;
+        padding: 8px 5px;
         white-space: nowrap;
     }
     
@@ -799,21 +853,21 @@
     
     .fixed-navbar button {
         flex-shrink: 0;
-        padding: 10px 16px;
-        font-size: 0.9rem;
-        margin: 0 5px;
+        padding: 8px 14px;
+        font-size: 0.85rem;
+        margin: 0 4px;
     }
     
     /* Перемещение иконки темы под навигацию */
     .theme-toggle {
         position: fixed;
-        top: 65px; /* Располагаем под навигационной панелью */
-        right: 20px;
+        top: 60px; /* Располагаем под навигационной панелью */
+        right: 15px;
         z-index: 10001;
         background: var(--navbar-bg);
         border-radius: 50%;
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -828,8 +882,8 @@
     /* Улучшение кнопок */
     .btn {
         width: 100%;
-        padding: 12px;
-        margin: 5px 0;
+        padding: 10px;
+        margin: 4px 0;
     }
     
     /* Скрытие неважных элементов на мобильных */
@@ -843,33 +897,102 @@
         margin-top: 5px;
         color: rgba(255, 255, 255, 0.6);
         font-size: 0.9rem;
-        display: block;
+        display: none !important;
     }
 }
 
 /* Добавьте также эти медиа-запросы */
 @media (max-width: 480px) {
+    
+    .artist-header {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .artist-image {
+        max-width: 220px;
+    }
+
+    .artist-info h2 {
+        font-size: 1.4rem;
+    }
+
+
+    .container {
+        gap: 10px;
+        padding: 5px;
+    }
+
+    .card {
+        height: 300px;
+        margin-bottom: 6px;
+    }
+
+    .card-image {
+        height: 140px;
+    }
+
+    .card-content {
+        padding: 12px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-description {
+        font-size: 0.85rem;
+        max-height: 3.2em;
+    }
+
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        margin: 10px 0;
     }
     .logo {
         font-size: 2.5rem;
     }
     
     .fixed-navbar button {
-        padding: 8px 14px;
-        font-size: 0.85rem;
+        padding: 7px 12px;
+        font-size: 0.8rem;
     }
     
     .theme-toggle {
-        width: 40px;
-        height: 40px;
-        top: 60px;
-        right: 15px;
+        width: 35px;
+        height: 35px;
+        top: 55px;
+        right: 12px;
     }
+
+    
 }
 
 @media (max-width: 320px) {
+    
+        .card {
+        height: 280px;
+    }
+
+    .card-image {
+        height: 130px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .fixed-navbar button {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+    }
+    
+    .theme-toggle {
+        width: 32px;
+        height: 32px;
+    }
+
+    
     .container {
         padding: 5px;
     }

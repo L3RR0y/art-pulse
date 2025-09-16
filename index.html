@@ -748,14 +748,13 @@
         }
 
         /* Адаптивность */
-@media (max-width: 768px) {
+    @media (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;
         gap: 12px;
         padding: 8px;
     }
-
-    .card {
+.card {
         height: 320px; /* Уменьшаем высоту карточки */
         margin-bottom: 8px; /* Уменьшаем отступ снизу */
     }
@@ -822,14 +821,14 @@
         padding: 15px;
     }
 
+    .artist-info h2 {
+        font-size: 1.6rem;
+    }
+
     .artist-image {
         width: 100%;
         max-width: 250px;
         margin: 0 auto;
-    }
-
-   .artist-info h2 {
-        font-size: 1.6rem;
     }
 
     /* Дополнительные часто необходимые правки */
@@ -868,7 +867,7 @@
         border-radius: 50%;
         width: 40px;
         height: 40px;
-        display: flex;
+        display: flex;transition: opacity 0.3s ease; /* Добавляем плавное исчезновение */
         align-items: center;
         justify-content: center;
         cursor: pointer;
@@ -904,21 +903,7 @@
 /* Добавьте также эти медиа-запросы */
 @media (max-width: 480px) {
     
-    .artist-header {
-        padding: 12px;
-        gap: 12px;
-    }
-
-    .artist-image {
-        max-width: 220px;
-    }
-
-    .artist-info h2 {
-        font-size: 1.4rem;
-    }
-
-
-    .container {
+        .container {
         gap: 10px;
         padding: 5px;
     }
@@ -944,7 +929,7 @@
         font-size: 0.85rem;
         max-height: 3.2em;
     }
-
+    
     h1 {
         font-size: 1.4rem;
         margin: 10px 0;
@@ -965,12 +950,25 @@
         right: 12px;
     }
 
-    
+        .artist-header {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .artist-image {
+        max-width: 220px;
+    }
+
+    .artist-info h2 {
+        font-size: 1.4rem;
+    }
+
+
 }
 
 @media (max-width: 320px) {
     
-        .card {
+    .card {
         height: 280px;
     }
 
@@ -982,17 +980,6 @@
         font-size: 1rem;
     }
 
-    .fixed-navbar button {
-        padding: 6px 10px;
-        font-size: 0.75rem;
-    }
-    
-    .theme-toggle {
-        width: 32px;
-        height: 32px;
-    }
-
-    
     .container {
         padding: 5px;
     }
@@ -1000,9 +987,14 @@
         font-size: 1.3rem;
     }
     
+    .theme-toggle {
+        width: 32px;
+        height: 32px;
+    }
+
     .fixed-navbar button {
-        padding: 6px 12px;
-        font-size: 0.8rem;
+        padding: 6px 10px;
+        font-size: 0.75rem;
     }
 }
 
@@ -1208,6 +1200,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Основные элементы DOM
+            const navContainer = document.querySelector('.fixed-navbar');
+            const scrollIndicator = document.querySelector('.scroll-indicator');
             const progressBar = document.getElementById('progressBar');
             const fixedNavbar = document.getElementById('fixedNavbar');
             const homeButton = document.getElementById('home-button');
@@ -1223,6 +1217,15 @@
             const closeArtistModal = document.getElementById('closeArtistModal');
             const artistDetails = document.getElementById('artistDetails');
             const container = document.getElementById('cards-container');
+            
+                function checkNavScroll() {
+        if (navContainer.scrollWidth > navContainer.offsetWidth) {
+            scrollIndicator.style.display = 'block';
+        } else {
+            scrollIndicator.style.display = 'none';
+        }
+    }
+            
             // Цвета для эффектов
             const colors = ['#FF5252', '#FF7B25', '#FFD166', '#06D6A0', '#118AB2', '#9D4EDD'];
             // Данные художников (50 уникальных художников)
@@ -2228,6 +2231,11 @@
                 const artist = artistsData.find(a => a.name === artistName);
                 if (!artist) return;
 
+            // Скрываем иконку темы на мобильных устройствах
+                if (window.innerWidth <= 768) {
+            themeToggle.style.display = 'none';
+    }
+
                 artistDetails.innerHTML = `
                     <div class="artist-header">
                         <div class="artist-image">
@@ -2310,9 +2318,23 @@
             const closeQuizModal = document.getElementById('closeQuizModal');
             const quizContainer = document.getElementById('quizContainer');
             quizButton.addEventListener('click', startQuiz);
-            closeQuizModal.addEventListener('click', () => quizModal.style.display = 'none');
+            closeQuizModal.addEventListener('click', () => {
+            quizModal.style.display = 'none';
+    
+            // Показываем иконку темы снова при закрытии модального окна
+            if (window.innerWidth <= 768) {
+            themeToggle.style.display = 'flex';
+                }
+            });
             window.addEventListener('click', (e) => {
-                if (e.target === quizModal) quizModal.style.display = 'none';
+            if (e.target === quizModal) {
+            quizModal.style.display = 'none';
+        
+            // Показываем иконку темы снова при закрытии модального окна
+            if (window.innerWidth <= 768) {
+            themeToggle.style.display = 'flex';
+                }
+                }
             });
             // Добавьте вопросы викторины (дополните этот массив)
             const allQuizQuestions = [
@@ -2465,6 +2487,12 @@
                 quizQuestions = generateRandomQuestions(15);
                 showQuestion();
                 quizModal.style.display = 'block';
+            // Скрываем иконку темы на мобильных устройствах
+            if (window.innerWidth <= 768) {
+            themeToggle.style.display = 'none';
+            }
+
+
             }
             function generateRandomQuestions(count) {
                 const availableQuestions = allQuizQuestions.filter(q => !usedQuestionIds.has(q.id));
@@ -2615,135 +2643,6 @@ function updateWorkItemHandlers() {
         });
     });
 }
-
-// Функции для работы с деталями художника
-function showArtistDetails(artistName) {
-    const artist = artistsData.find(a => a.name === artistName);
-    if (!artist) return;
-
-    // Скрываем иконку темы на мобильных устройствах
-    if (window.innerWidth <= 768) {
-        themeToggle.style.display = 'none';
-    }
-
-    artistDetails.innerHTML = `
-        <div class="artist-header">
-            <div class="artist-image">
-                <img src="${artist.image}" alt="${artist.name}">
-            </div>
-            <div class="artist-info">
-                <h2 class="artist-name">${artist.name}</h2>
-                <p class="artist-style">${artist.style}</p>
-                <p class="artist-bio">${artist.bio || 'Информация о художнике скоро будет добавлена.'}</p>
-                ${artist.facts ? `
-                    <div class="artist-facts">
-                        <h3>Интересные факты:</h3>
-                        <ul>
-                            ${artist.facts.map(fact => `<li>${fact}</li>`).join('')}
-                        </ul>
-                    </div>
-                ` : ''}
-            </div>
-        </div>
-        ${artist.works ? `
-            <div class="artist-works">
-                <h3>Известные работы:</h3>
-                <div class="works-grid">
-                    ${artist.works.map(work => `
-                        <div class="work-item">
-                            <img src="${work.image}" alt="${work.title}">
-                            <div class="work-title">${work.title} (${work.year})</div>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-        ` : ''}
-    `;
-
-    artistModal.style.display = 'block';
-    updateWorkItemHandlers();
-}
-
-// Функция для закрытия модального окна художника (дополненная)
-function closeArtistModal() {
-    artistModal.style.display = 'none';
-    
-    // Показываем иконку темы снова при закрытии модального окна
-    if (window.innerWidth <= 768) {
-        themeToggle.style.display = 'flex';
-    }
-}
-
-// Обновите обработчик закрытия модального окна
-closeArtistModal.addEventListener('click', closeArtistModal);
-
-// Также обрабатываем закрытие по клику вне модального окна
-window.addEventListener('click', (e) => {
-    if (e.target === artistModal) {
-        closeArtistModal();
-    }
-});
-
-// Для модального окна с картинкой
-function openPictureModal(pictureUrl, works) {
-    currentArtistWorks = works;
-    currentPictureIndex = works.findIndex(work => work.image === pictureUrl);
-    fullscreenPicture.src = pictureUrl;
-    pictureModal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    
-    // Скрываем иконку темы на мобильных устройствах
-    if (window.innerWidth <= 768) {
-        themeToggle.style.display = 'none';
-    }
-}
-
-function closePicture() {
-    pictureModal.style.display = 'none';
-    document.body.style.overflow = '';
-    
-    // Показываем иконку темы снова при закрытии модального окна
-    if (window.innerWidth <= 768) {
-        themeToggle.style.display = 'flex';
-    }
-}
-
-// Для модального окна викторины
-function startQuiz() {
-    usedQuestionIds.clear();
-    score = 0;
-    currentQuestionIndex = 0;
-    quizQuestions = generateRandomQuestions(15);
-    showQuestion();
-    quizModal.style.display = 'block';
-    
-    // Скрываем иконку темы на мобильных устройствах
-    if (window.innerWidth <= 768) {
-        themeToggle.style.display = 'none';
-    }
-}
-
-// Обновите обработчик закрытия викторины
-closeQuizModal.addEventListener('click', () => {
-    quizModal.style.display = 'none';
-    
-    // Показываем иконку темы снова при закрытии модального окна
-    if (window.innerWidth <= 768) {
-        themeToggle.style.display = 'flex';
-    }
-});
-
-// Также для викторины по клику вне окна
-window.addEventListener('click', (e) => {
-    if (e.target === quizModal) {
-        quizModal.style.display = 'none';
-        
-        // Показываем иконку темы снова при закрытии модального окна
-        if (window.innerWidth <= 768) {
-            themeToggle.style.display = 'flex';
-        }
-    }
-});
 
             function showResults() {
                 const percentage = Math.round((score / quizQuestions.length) * 100);

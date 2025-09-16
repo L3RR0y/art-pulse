@@ -836,9 +836,13 @@
         display: none;
     }
     
-    /* Убираем индикатор прокрутки */
+    /* Индикатор прокрутки для навигации */
     .scroll-indicator {
-        display: none !important;
+        text-align: center;
+        margin-top: 5px;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+        display: block;
     }
 }
 
@@ -988,13 +992,13 @@
 </head>
 <body>
     <div class="progress-bar" id="progressBar"></div>
-<div class="fixed-navbar" id="fixedNavbar">
-    <button id="home-button">Главная</button>
-    <button id="gallery-button">Галерея художников</button>
-    <button id="favorites-button">Избранное</button>
-    <button id="compare-button">Сравнить</button>
-    <button id="quiz-button">Викторина</button>
-</div>
+    <div class="fixed-navbar" id="fixedNavbar">
+        <button id="home-button">Главная</button>
+        <button id="gallery-button">Галерея художников</button>
+        <button id="favorites-button">Избранное</button>
+        <button id="compare-button">Сравнить</button>
+        <button id="quiz-button">Викторина</button>
+    </div>
 
     <div class="modal" id="quizModal">
         <div class="modal-content">

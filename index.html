@@ -2615,10 +2615,6 @@ function openPictureModal(pictureUrl, works) {
 function closePicture() {
     pictureModal.style.display = 'none';
     document.body.style.overflow = '';
-    // Показываем иконку темы снова при закрытии модального окна
-    if (window.innerWidth <= 768) {
-        themeToggle.style.display = 'flex';
-    }
 }
 
 // Переключение на предыдущую картину

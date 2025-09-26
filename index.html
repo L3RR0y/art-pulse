@@ -17,7 +17,6 @@
             --tag-bg: rgba(100, 150, 255, 0.3);
             --modal-bg: rgba(10, 15, 40, 0.95);
             --logo-bg-image: url('fon.jpg');
-
         }
 
         .light-theme {
@@ -30,64 +29,63 @@
             --modal-bg: rgba(255, 255, 255, 0.98);
         }
         
-.light-theme #search-input {
-    background: rgba(255, 255, 255, 0.9);
-    color: #333;
-    border: 1px solid rgba(100, 150, 255, 0.3);
-}
+        .light-theme #search-input {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border: 1px solid rgba(100, 150, 255, 0.3);
+        }
 
-.light-theme #search-input::placeholder {
-    color: #777;
-}
+        .light-theme #search-input::placeholder {
+            color: #777;
+        }
 
-.light-theme #search-button {
-    background: rgba(74, 108, 247, 0.2);
-    color: #333;
-}
+        .light-theme #search-button {
+            background: rgba(74, 108, 247, 0.2);
+            color: #333;
+        }
 
-.light-theme .autocomplete-items {
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(100, 150, 255, 0.3);
-}
+        .light-theme .autocomplete-items {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(100, 150, 255, 0.3);
+        }
 
-.light-theme .autocomplete-item {
-    color: #333;
-}
+        .light-theme .autocomplete-item {
+            color: #333;
+        }
 
-.light-theme .autocomplete-item:hover {
-    background: rgba(74, 108, 247, 0.15);
-}
+        .light-theme .autocomplete-item:hover {
+            background: rgba(74, 108, 247, 0.15);
+        }
 
-.light-theme .filter-btn {
-    background: rgba(255, 255, 255, 0.9);
-    color: #333;
-    border: 1px solid rgba(100, 150, 255, 0.3);
-}
+        .light-theme .filter-btn {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border: 1px solid rgba(100, 150, 255, 0.3);
+        }
 
-.light-theme .filter-btn:hover {
-    background: rgba(220, 220, 255, 0.8);
-}
+        .light-theme .filter-btn:hover {
+            background: rgba(220, 220, 255, 0.8);
+        }
 
-.light-theme .filter-btn.active {
-    background: rgba(74, 108, 247, 0.4);
-    color: #fff;
-}
+        .light-theme .filter-btn.active {
+            background: rgba(74, 108, 247, 0.4);
+            color: #fff;
+        }
 
-.light-theme .fixed-navbar button {
-    background: rgba(255, 255, 255, 0.9);
-    color: #333;
-    border: 1px solid rgba(100, 150, 255, 0.3);
-}
+        .light-theme .fixed-navbar button {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border: 1px solid rgba(100, 150, 255, 0.3);
+        }
 
-.light-theme .fixed-navbar button:hover {
-    background: rgba(220, 220, 255, 0.8);
-}
+        .light-theme .fixed-navbar button:hover {
+            background: rgba(220, 220, 255, 0.8);
+        }
 
-.light-theme .fixed-navbar button.active {
-    background: rgba(74, 108, 247, 0.4);
-    color: #fff;
-}
-
+        .light-theme .fixed-navbar button.active {
+            background: rgba(74, 108, 247, 0.4);
+            color: #fff;
+        }
 
         * {
             margin: 0;
@@ -163,42 +161,184 @@
             box-shadow: 0 0 10px rgba(100, 150, 255, 0.5);
         }
 
-.theme-toggle {
-    position: fixed;
-    top: 70px;
-    right: 20px;
-    z-index: 10001; /* Чуть ниже, чем у навигации */
-    background: var(--navbar-bg);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: none; /* Скрыта по умолчанию */
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(100, 150, 255, 0.2);
-    color: var(--text-color);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
+        .theme-toggle {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            z-index: 10001;
+            background: var(--navbar-bg);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(100, 150, 255, 0.2);
+            color: var(--text-color);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
 
-.fixed-navbar.visible ~ .theme-toggle {
-    display: flex; /* Показывается, когда навигация видна */
-    opacity: 1;
-}
+        .fixed-navbar.visible ~ .theme-toggle {
+            display: flex;
+            opacity: 1;
+        }
 
-.logo-section {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--logo-bg-image) no-repeat center center fixed;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;
-    transition: opacity 0.5s ease;
-}
+        .intro-section {
+            padding: 60px 20px;
+            background: var(--card-bg);
+            margin: 40px auto;
+            max-width: 1200px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(100, 150, 255, 0.2);
+        }
+
+        .intro-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .artpulse-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            text-shadow: 0 0 15px rgba(160, 209, 255, 0.7);
+        }
+
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--accent-color), #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(160, 209, 255, 0.5);
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .intro-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .artwork-svg {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            filter: drop-shadow(0 0 30px rgba(160, 209, 255, 0.6));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .artwork-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(160, 209, 255, 0.3) 0%, rgba(160, 209, 255, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .intro-text {
+            padding: 20px;
+        }
+
+        .intro-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--text-color);
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .intro-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-color);
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        @media (max-width: 768px) {
+            .intro-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+            
+            .intro-header {
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            
+            .artpulse-logo {
+                position: relative;
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .artwork-svg {
+                max-width: 200px;
+            }
+            
+            .intro-title {
+                font-size: 1.8rem;
+            }
+            
+            .intro-description {
+                font-size: 1rem;
+            }
+        }
+
+        .logo-section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--logo-bg-image) no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            transition: opacity 0.5s ease;
+        }
 
         .logo {
             font-family: 'Cinzel', serif;
@@ -748,362 +888,444 @@
         }
 
         /* Адаптивность */
-    @media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 8px;
-    }
-.card {
-        height: 320px; /* Уменьшаем высоту карточки */
-        margin-bottom: 8px; /* Уменьшаем отступ снизу */
-    }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 8px;
+            }
+            .card {
+                height: 320px;
+                margin-bottom: 8px;
+            }
 
-    .card-image {
-        height: 150px; /* Уменьшаем высоту изображения */
-    }
+            .card-image {
+                height: 150px;
+            }
 
-    .card-content {
-        padding: 15px; /* Уменьшаем внутренние отступы */
-    }
+            .card-content {
+                padding: 15px;
+            }
 
-    .card-title {
-        font-size: 1.2rem; /* Уменьшаем размер заголовка */
-        margin-bottom: 8px;
-    }
+            .card-title {
+                font-size: 1.2rem;
+                margin-bottom: 8px;
+            }
 
-    .card-description {
-        font-size: 0.9rem; /* Уменьшаем размер текста */
-        line-height: 1.4;
-        max-height: 3.5em; /* Уменьшаем максимальную высоту текста */
-    }
+            .card-description {
+                font-size: 0.9rem;
+                line-height: 1.4;
+                max-height: 3.5em;
+            }
 
-    .card-footer {
-        padding-top: 12px;
-        margin-top: 10px;
-    }
+            .card-footer {
+                padding-top: 12px;
+                margin-top: 10px;
+            }
 
-    .card-tag {
-        font-size: 0.8rem;
-        padding: 4px 10px;
-    }
+            .card-tag {
+                font-size: 0.8rem;
+                padding: 4px 10px;
+            }
 
-    .card-date {
-        font-size: 0.8rem;
-    }
+            .card-date {
+                font-size: 0.8rem;
+            }
 
-    .favorite-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
+            .favorite-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
 
-    .compare-checkbox {
-        width: 18px;
-        height: 18px;
-    }
+            .compare-checkbox {
+                width: 18px;
+                height: 18px;
+            }
 
-    h1 {
-        font-size: 1.6rem;
-        text-align: center;
-        margin: 12px 0;
-    }
-    
-    .logo {
-        font-size: 2.8rem;
-        text-align: center;
-    }
+            h1 {
+                font-size: 1.6rem;
+                text-align: center;
+                margin: 12px 0;
+            }
+            
+            .logo {
+                font-size: 2.8rem;
+                text-align: center;
+            }
 
-    .artist-header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-        padding: 15px;
-    }
+            .artist-header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+                padding: 15px;
+            }
 
-    .artist-info h2 {
-        font-size: 1.6rem;
-    }
+            .artist-info h2 {
+                font-size: 1.6rem;
+            }
 
-    .artist-image {
-        width: 100%;
-        max-width: 250px;
-        margin: 0 auto;
-    }
+            .artist-image {
+                width: 100%;
+                max-width: 250px;
+                margin: 0 auto;
+            }
 
-    /* Дополнительные часто необходимые правки */
-    body {
-        font-size: 14px;
-    }
-    
-    /* Улучшение для навигации - горизонтальная прокрутка */
-    .fixed-navbar {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        justify-content: flex-start;
-        padding: 8px 5px;
-        white-space: nowrap;
-    }
-    
-    .fixed-navbar::-webkit-scrollbar {
-        display: none;
-    }
-    
-    .fixed-navbar button {
-        flex-shrink: 0;
-        padding: 8px 14px;
-        font-size: 0.85rem;
-        margin: 0 4px;
-    }
-    
-    /* Перемещение иконки темы под навигацию */
-    .theme-toggle {
-        position: fixed;
-        top: 60px; /* Располагаем под навигационной панелью */
-        right: 15px;
-        z-index: 10001;
-        background: var(--navbar-bg);
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;transition: opacity 0.3s ease; /* Добавляем плавное исчезновение */
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        border: 1px solid rgba(100, 150, 255, 0.2);
-        color: var(--text-color);
-        opacity: 1; /* Всегда видима на мобильных */
-        transition: opacity 0.3s ease; /* Добавляем плавное исчезновение */
-    }
-    
-    /* Улучшение кнопок */
-    .btn {
-        width: 100%;
-        padding: 10px;
-        margin: 4px 0;
-    }
-    
-    /* Скрытие неважных элементов на мобильных */
-    .desktop-only {
-        display: none;
-    }
-    
-    /* Индикатор прокрутки для навигации */
-    .scroll-indicator {
-        text-align: center;
-        margin-top: 5px;
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 0.9rem;
-        display: none !important;
-    }
-}
+            body {
+                font-size: 14px;
+            }
+            
+            .fixed-navbar {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                justify-content: flex-start;
+                padding: 8px 5px;
+                white-space: nowrap;
+            }
+            
+            .fixed-navbar::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .fixed-navbar button {
+                flex-shrink: 0;
+                padding: 8px 14px;
+                font-size: 0.85rem;
+                margin: 0 4px;
+            }
+            
+            .theme-toggle {
+                position: fixed;
+                top: 60px;
+                right: 15px;
+                z-index: 10001;
+                background: var(--navbar-bg);
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                transition: opacity 0.3s ease;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+                border: 1px solid rgba(100, 150, 255, 0.2);
+                color: var(--text-color);
+                opacity: 1;
+                transition: opacity 0.3s ease;
+            }
+            
+            .desktop-only {
+                display: none;
+            }
+            
+            .scroll-indicator {
+                text-align: center;
+                margin-top: 5px;
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.9rem;
+                display: none !important;
+            }
+        }
 
-/* Добавьте также эти медиа-запросы */
-@media (max-width: 480px) {
-    
-        .container {
-        gap: 10px;
-        padding: 5px;
-    }
+        @media (max-width: 480px) {
+            .container {
+                gap: 10px;
+                padding: 5px;
+            }
 
-    .card {
-        height: 300px;
-        margin-bottom: 6px;
-    }
+            .card {
+                height: 300px;
+                margin-bottom: 6px;
+            }
 
-    .card-image {
-        height: 140px;
-    }
+            .card-image {
+                height: 140px;
+            }
 
-    .card-content {
-        padding: 12px;
-    }
+            .card-content {
+                padding: 12px;
+            }
 
-    .card-title {
-        font-size: 1.1rem;
-    }
+            .card-title {
+                font-size: 1.1rem;
+            }
 
-    .card-description {
-        font-size: 0.85rem;
-        max-height: 3.2em;
-    }
-    
-    h1 {
-        font-size: 1.4rem;
-        margin: 10px 0;
-    }
-    .logo {
-        font-size: 2.5rem;
-    }
-    
-    .fixed-navbar button {
-        padding: 7px 12px;
-        font-size: 0.8rem;
-    }
-    
-    .theme-toggle {
-        width: 35px;
-        height: 35px;
-        top: 55px;
-        right: 12px;
-    }
+            .card-description {
+                font-size: 0.85rem;
+                max-height: 3.2em;
+            }
+            
+            h1 {
+                font-size: 1.4rem;
+                margin: 10px 0;
+            }
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .fixed-navbar button {
+                padding: 7px 12px;
+                font-size: 0.8rem;
+            }
+            
+            .theme-toggle {
+                width: 35px;
+                height: 35px;
+                top: 55px;
+                right: 12px;
+            }
 
-        .artist-header {
-        padding: 12px;
-        gap: 12px;
-    }
+            .artist-header {
+                padding: 12px;
+                gap: 12px;
+            }
 
-    .artist-image {
-        max-width: 220px;
-    }
+            .artist-image {
+                max-width: 220px;
+            }
 
-    .artist-info h2 {
-        font-size: 1.4rem;
-    }
+            .artist-info h2 {
+                font-size: 1.4rem;
+            }
+        }
 
+        @media (max-width: 320px) {
+            .card {
+                height: 280px;
+            }
 
-}
+            .card-image {
+                height: 130px;
+            }
 
-@media (max-width: 320px) {
-    
-    .card {
-        height: 280px;
-    }
+            .card-title {
+                font-size: 1rem;
+            }
 
-    .card-image {
-        height: 130px;
-    }
+            .container {
+                padding: 5px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            
+            .theme-toggle {
+                width: 32px;
+                height: 32px;
+            }
 
-    .card-title {
-        font-size: 1rem;
-    }
-
-    .container {
-        padding: 5px;
-    }
-    h1 {
-        font-size: 1.3rem;
-    }
-    
-    .theme-toggle {
-        width: 32px;
-        height: 32px;
-    }
-
-    .fixed-navbar button {
-        padding: 6px 10px;
-        font-size: 0.75rem;
-    }
-}
+            .fixed-navbar button {
+                padding: 6px 10px;
+                font-size: 0.75rem;
+            }
+        }
 
         /* Стили для футера */
         .footer {
             background: var(--navbar-bg);
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
             border-top: 1px solid rgba(100, 150, 255, 0.2);
             backdrop-filter: blur(10px);
         }
 
         .footer-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .footer-link {
+        .footer-section {
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .footer-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-link {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
             color: var(--text-color);
             text-decoration: none;
-            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 10px 0;
+        }
+
+        .contact-link:hover {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            font-size: 1.3rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .contact-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .support-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .support-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            padding: 8px 0;
+        }
+
+        .support-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--accent-color);
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: all 0.3s ease;
         }
 
-        .footer-link:hover {
-            color: var(--accent-color);
-            transform: translateY(-2px);
+        .support-checkbox.checked {
+            background: var(--accent-color);
         }
 
-        .footer-icon {
-            font-size: 1.2rem;
+        .support-checkbox.checked::after {
+            content: "✓";
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
         }
 
-/* Модальное окно для картин */
-.modal#pictureModal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    z-index: 10001;
-    overflow: hidden;
-    backdrop-filter: blur(5px);
-}
+        .footer-bottom {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(100, 150, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
 
-.picture-modal-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-section h3 {
+                font-size: 1.2rem;
+            }
+            
+            .contact-link {
+                padding: 8px 0;
+            }
+        }
 
-#fullscreenPicture {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-}
+        /* Модальное окно для картин */
+        .modal#pictureModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10001;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
 
-.nav-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 10002;
-    transition: all 0.3s ease;
-}
+        .picture-modal-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
 
-.nav-arrow:hover {
-    background: rgba(100, 150, 255, 0.7);
-}
+        #fullscreenPicture {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
 
-.left-arrow {
-    left: 20px;
-}
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10002;
+            transition: all 0.3s ease;
+        }
 
-.right-arrow {
-    right: 20px;
-}
+        .nav-arrow:hover {
+            background: rgba(100, 150, 255, 0.7);
+        }
 
-#closePictureModal {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 10002;
-}
+        .left-arrow {
+            left: 20px;
+        }
 
+        .right-arrow {
+            right: 20px;
+        }
+
+        #closePictureModal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 10002;
+        }
     </style>
 </head>
 <body>
@@ -1130,6 +1352,76 @@
 
     <div class="logo-section">
         <div class="logo">ART PULSE</div>
+    </div>
+
+    <!-- Новый блок с логотипом и предисловием -->
+    <div class="intro-section">
+        <div class="intro-header">
+            <div class="artpulse-logo">
+                <i class="fas fa-palette logo-icon"></i>
+                <span class="logo-text">ArtPulse</span>
+            </div>
+        </div>
+        <div class="intro-content">
+            <div class="intro-image">
+                <div class="artwork-glow"></div>
+                <svg class="artwork-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Абстрактная художественная композиция -->
+                    <defs>
+                        <linearGradient id="pulseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#a0d1ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#4a6cf7;stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    <!-- Центральный элемент - пульсирующее сердце искусства -->
+                    <path d="M100,50 C120,30 150,40 150,70 C150,100 100,130 100,130 C100,130 50,100 50,70 C50,40 80,30 100,50 Z" 
+                          fill="url(#pulseGradient)" filter="url(#glow)" />
+                    
+                    <!-- Вращающиеся элементы вокруг -->
+                    <circle cx="100" cy="100" r="60" fill="none" stroke="url(#pulseGradient)" stroke-width="2" 
+                            stroke-dasharray="5,5" opacity="0.7">
+                        <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" 
+                                          dur="8s" repeatCount="indefinite" />
+                    </circle>
+                    
+                    <!-- Точки-искры -->
+                    <circle cx="140" cy="70" r="3" fill="#a0d1ff">
+                        <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="70" cy="140" r="2" fill="#4a6cf7">
+                        <animate attributeName="r" values="2;4;2" dur="1.5s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="130" cy="130" r="2.5" fill="#a0d1ff">
+                        <animate attributeName="r" values="2.5;4.5;2.5" dur="1.8s" repeatCount="indefinite" />
+                    </circle>
+                </svg>
+            </div>
+            <div class="intro-text">
+                <h2 class="intro-title">Добро пожаловать в ArtPulse</h2>
+                <p class="intro-description">
+                    ArtPulse — это уникальная платформа, где искусство оживает. Мы создали пространство, 
+                    где каждый удар сердца творчества находит свой отклик. Наш проект объединяет вековые 
+                    традиции и современные технологии, чтобы подарить вам незабываемое путешествие в мир искусства.
+                </p>
+                <p class="intro-description">
+                    Откройте для себя богатую коллекцию работ великих мастеров, исследуйте различные 
+                    художественные направления и погрузитесь в историю создания шедевров, которые 
+                    изменили мир искусства навсегда.
+                </p>
+                <p class="intro-description">
+                    Присоединяйтесь к нашему пульсирующему сообществу ценителей прекрасного, где 
+                    каждый найдет вдохновение и новые горизонты для творческого роста.
+                </p>
+            </div>
+        </div>
     </div>
 
     <div class="header">
@@ -1164,16 +1456,17 @@
         <!-- Карточки будут сгенерированы с помощью JavaScript -->
     </div>
 
-    <!-- Модальное окно деталей художника -->
-     <!-- Модальное окно для просмотра картин -->
+    <!-- Модальное окно для просмотра картин -->
     <div class="modal" id="pictureModal">
-    <div class="modal-content picture-modal-content">
-        <button class="close-modal" id="closePictureModal">&times;</button>
-        <button class="nav-arrow left-arrow" id="prevPicture">&larr;</button>
-        <img id="fullscreenPicture" src="" alt="Картина на весь экран">
-        <button class="nav-arrow right-arrow" id="nextPicture">&rarr;</button>
+        <div class="modal-content picture-modal-content">
+            <button class="close-modal" id="closePictureModal">&times;</button>
+            <button class="nav-arrow left-arrow" id="prevPicture">&larr;</button>
+            <img id="fullscreenPicture" src="" alt="Картина на весь экран">
+            <button class="nav-arrow right-arrow" id="nextPicture">&rarr;</button>
+        </div>
     </div>
-    </div>
+    
+    <!-- Модальное окно деталей художника -->
     <div class="modal" id="artistModal">
         <div class="modal-content">
             <button class="close-modal" id="closeArtistModal">&times;</button>
@@ -1186,14 +1479,67 @@
     <!-- Футер -->
     <footer class="footer">
         <div class="footer-content">
-            <a href="https://t.me/L3RR0y" class="footer-link" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-telegram footer-icon"></i>
-                <span>Telegram</span>
-            </a>
-            <a href="mailto:deliandk2280w@yandex.ru" class="footer-link">
-                <i class="fas fa-envelope footer-icon"></i>
-                <span>deliandk2280w@yandex.ru</span>
-            </a>
+            <!-- Секция "Связь со мной" -->
+            <div class="footer-section">
+                <h3>Связь со мной</h3>
+                <p>Всегда рад общению и сотрудничеству</p>
+                <div class="contact-links">
+                    <a href="https://t.me/L3RR0y" class="contact-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-telegram contact-icon"></i>
+                        <div class="contact-text">
+                            <span class="contact-title">Telegram</span>
+                            <span class="contact-description">Быстрая связь и оперативные ответы</span>
+                        </div>
+                    </a>
+                    <a href="mailto:deliandk2280w@yandex.ru" class="contact-link">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div class="contact-text">
+                            <span class="contact-title">Почта</span>
+                            <span class="contact-description">Для официальных запросов и предложений</span>
+                        </div>
+                    </a>
+                    <a href="tel:+79518480448" class="contact-link">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <div class="contact-text">
+                            <span class="contact-title">Телефон</span>
+                            <span class="contact-description">Для срочных вопросов и консультаций</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Секция "Поддержка проекта" -->
+            <div class="footer-section">
+                <h3>Поддержка проекта</h3>
+                <p>ArtPulse — это проект, созданный с любовью к искусству. Если вам нравится то, что я делаю, вы можете поддержать развитие проекта.</p>
+                <ul class="support-list">
+                    <li class="support-item">
+                        <div class="support-checkbox"></div>
+                        <span>Развитие платформы - Добавление новых функций и художников</span>
+                    </li>
+                    <li class="support-item">
+                        <div class="support-checkbox checked"></div>
+                        <span>Мобильное приложение - Разработка удобного мобильного клиента</span>
+                    </li>
+                    <li class="support-item">
+                        <div class="support-checkbox"></div>
+                        <span>Сообщество - Создание активного сообщества ценителей искусства</span>
+                    </li>
+                    <li class="support-item">
+                        <div class="support-checkbox"></div>
+                        <span>Предложить идею</span>
+                    </li>
+                    <li class="support-item">
+                        <div class="support-checkbox checked"></div>
+                        <span>Сотрудничество</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Нижняя часть футера -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 ArtPulse. Все права защищены. Сайт разработан для настоящих ценителей искусства</p>
+            </div>
         </div>
     </footer>
 
@@ -1218,16 +1564,17 @@
             const artistDetails = document.getElementById('artistDetails');
             const container = document.getElementById('cards-container');
             
-                function checkNavScroll() {
-        if (navContainer.scrollWidth > navContainer.offsetWidth) {
-            scrollIndicator.style.display = 'block';
-        } else {
-            scrollIndicator.style.display = 'none';
-        }
-    }
+            function checkNavScroll() {
+                if (navContainer.scrollWidth > navContainer.offsetWidth) {
+                    scrollIndicator.style.display = 'block';
+                } else {
+                    scrollIndicator.style.display = 'none';
+                }
+            }
             
             // Цвета для эффектов
             const colors = ['#FF5252', '#FF7B25', '#FFD166', '#06D6A0', '#118AB2', '#9D4EDD'];
+            
             // Данные художников (50 уникальных художников)
             const artistsData = [
                 {
@@ -1812,7 +2159,7 @@
                     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/James_Ensor_1900.jpg/300px-James_Ensor_1900.jpg",
                     bio: "Бельгийский художник и график, один из предшественников экспрессионизма и сюрреализма. Мастер гротеска и сатиры.",
                     works: [
-                        { title: "Въезд Христа в Брюссель", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/James_Ensor_007.jpg/300px-James_Ensor_007.jpg", year: "1888" },
+                        { title: "Въезд Христа в Брюссель", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/James_Ensor_007.jpg/300px-James_Ensор_007.jpg", year: "1888" },
                         { title: "Автопортрет с масками", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/James_Ensor_009.jpg/300px-James_Ensor_009.jpg", year: "1899" },
                         { title: "Скелеты, оспаривающие повешенного", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/James_Ensor_011.jpg/300px-James_Ensor_011.jpg", year: "1891" }
                     ],
@@ -1975,6 +2322,7 @@
                     facts: ["Его картина 'Портрет художника' была продана за 90 миллионов долларов", "Активно использует iPad для создания цифровых рисунков", "Живет в Калифорнии, где создал многие свои знаменитые работы с бассейнами"]
                 }
             ];
+
             // Переменные состояния
             let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
             let compareList = [];
@@ -1988,13 +2336,13 @@
                 logoSection.style.opacity = opacity > 0 ? opacity : 0;
             });
 
-
             // Функции инициализации
             function init() {
                 createCards();
                 setupEventListeners();
                 updateProgressBar();
             }
+            
             function setupEventListeners() {
                 window.addEventListener('scroll', handleScroll);
                 homeButton.addEventListener('click', scrollToTop);
@@ -2005,28 +2353,25 @@
                 searchInput.addEventListener('input', handleAutocomplete);
                 themeToggle.addEventListener('click', toggleTheme);
                 closeArtistModal.addEventListener('click', () => {
-                artistModal.style.display = 'none';
-    
-                // Показываем иконку темы снова при закрытии модального окна
-                if (window.innerWidth <= 768) {
-                themeToggle.style.display = 'flex';
+                    artistModal.style.display = 'none';
+                    if (window.innerWidth <= 768) {
+                        themeToggle.style.display = 'flex';
                     }
                 });
-                // Закрытие модальных окон при клике вне их
+                
                 window.addEventListener('click', (e) => {
-                if (e.target === artistModal) {
-                artistModal.style.display = 'none';
-        
-                // Показываем иконку темы снова при закрытии модального окна
-                if (window.innerWidth <= 768) {
-                themeToggle.style.display = 'flex';
+                    if (e.target === artistModal) {
+                        artistModal.style.display = 'none';
+                        if (window.innerWidth <= 768) {
+                            themeToggle.style.display = 'flex';
                         }
                     }
                 });
-                // Эффект при клике
+                
                 document.body.addEventListener('click', createClickEffect);
                 document.addEventListener('mousedown', preventDoubleClick);
             }
+
             // Функции для работы с интерфейсом
             function handleScroll() {
                 updateProgressBar();
@@ -2037,6 +2382,7 @@
                     fixedNavbar.classList.remove('visible');
                 }
             }
+            
             function updateProgressBar() {
                 const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
                 const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
@@ -2044,12 +2390,15 @@
                 const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
                 progressBar.style.width = scrollPercentage + '%';
             }
+            
             function scrollToTop() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
+            
             function scrollToGallery() {
                 document.querySelector('.container').scrollIntoView({ behavior: 'smooth' });
             }
+            
             function toggleTheme() {
                 document.body.classList.toggle('light-theme');
                 const icon = themeToggle.querySelector('i');
@@ -2061,6 +2410,7 @@
                     icon.classList.add('fa-moon');
                 }
             }
+            
             function createClickEffect(e) {
                 const randomColor = colors[Math.floor(Math.random() * colors.length)];
                 const x = e.clientX;
@@ -2078,11 +2428,13 @@
                     effect.remove();
                 }, 500);
             }
+            
             function preventDoubleClick(e) {
                 if (e.detail > 1) {
                     e.preventDefault();
                 }
             }
+            
             // Функции для работы с карточками
             function getRandomDate() {
                 const start = new Date(2020, 0, 1);
@@ -2090,6 +2442,7 @@
                 const date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
                 return date.toLocaleDateString('ru-RU');
             }
+            
             function createCards() {
                 container.innerHTML = '';
 
@@ -2140,6 +2493,7 @@
                     });
                 });
             }
+            
             // Функции для работы с избранным
             function toggleFavorite(artistName) {
                 if (favorites.includes(artistName)) {
@@ -2149,6 +2503,7 @@
                 }
                 localStorage.setItem('favorites', JSON.stringify(favorites));
             }
+            
             function showFavorites() {
                 const filterButtons = document.querySelectorAll('.filter-btn');
                 filterButtons.forEach(btn => btn.classList.remove('active'));
@@ -2173,6 +2528,7 @@
                     }
                 });
             }
+            
             // Функции для работы с сравнением
             function toggleCompareMode() {
                 isCompareMode = !isCompareMode;
@@ -2190,6 +2546,7 @@
                     alert(`Сравнение художников: ${compareList[0]} и ${compareList[1]}`);
                 }
             }
+            
             // Функции для работы с поиском и автодополнением
             function handleSearch() {
                 const searchTerm = searchInput.value.toLowerCase();
@@ -2204,6 +2561,7 @@
                     }
                 });
             }
+            
             function handleAutocomplete() {
                 const value = searchInput.value.toLowerCase();
                 autocompleteList.innerHTML = '';
@@ -2239,15 +2597,16 @@
                     });
                 }
             }
+            
             // Функции для работы с деталями художника
             function showArtistDetails(artistName) {
                 const artist = artistsData.find(a => a.name === artistName);
                 if (!artist) return;
 
-            // Скрываем иконку темы на мобильных устройствах
+                // Скрываем иконку темы на мобильных устройствах
                 if (window.innerWidth <= 768) {
-            themeToggle.style.display = 'none';
-    }
+                    themeToggle.style.display = 'none';
+                }
 
                 artistDetails.innerHTML = `
                     <div class="artist-header">
@@ -2284,26 +2643,22 @@
                 `;
 
                 artistModal.style.display = 'block';
-                    // Обновляем обработчики кликов для картин
-                    updateWorkItemHandlers();
-                    // Обновление обработчиков для картин в модальном окне художника
-            function updateWorkItemHandlers() {
-            // Находим все миниатюры картин в биографии художника
-            const workImages = document.querySelectorAll('.work-item img');
-
-            // Добавляем обработчик клика на каждую миниатюру
-            workImages.forEach(img => {
-            img.onclick = function() {
-            const pictureUrl = this.src; // URL кликнутой картины
-            const artistName = document.querySelector('.artist-name').textContent; // Имя текущего художника
-            const artist = artistsData.find(a => a.name === artistName); // Находим данные о художнике
-
-            // Открываем модальное окно с увеличенной картиной
-            openPictureModal(pictureUrl, artist.works);
-        };
-    });
-}
+                // Обновляем обработчики кликов для картин
+                updateWorkItemHandlers();
             }
+            
+            // Обновление обработчиков для картин в модальном окне художника
+            function updateWorkItemHandlers() {
+                document.querySelectorAll('.work-item img').forEach(img => {
+                    img.addEventListener('click', function() {
+                        const pictureUrl = this.src;
+                        const artistName = document.querySelector('.artist-name').textContent;
+                        const artist = artistsData.find(a => a.name === artistName);
+                        openPictureModal(pictureUrl, artist.works);
+                    });
+                });
+            }
+            
             // Фильтрация карточек
             document.querySelectorAll('.filter-btn').forEach(button => {
                 button.addEventListener('click', () => {
@@ -2320,36 +2675,37 @@
                     });
                 });
             });
+            
             // Добавьте эти переменные в начало с другими переменными состояния
             let quizQuestions = [];
             let currentQuestionIndex = 0;
             let score = 0;
             let usedQuestionIds = new Set();
+            
             // Добавьте этот код в функцию setupEventListeners()
             const quizButton = document.getElementById('quiz-button');
             const quizModal = document.getElementById('quizModal');
             const closeQuizModal = document.getElementById('closeQuizModal');
             const quizContainer = document.getElementById('quizContainer');
+            
             quizButton.addEventListener('click', startQuiz);
             closeQuizModal.addEventListener('click', () => {
-            quizModal.style.display = 'none';
-    
-            // Показываем иконку темы снова при закрытии модального окна
-            if (window.innerWidth <= 768) {
-            themeToggle.style.display = 'flex';
+                quizModal.style.display = 'none';
+                if (window.innerWidth <= 768) {
+                    themeToggle.style.display = 'flex';
                 }
             });
+            
             window.addEventListener('click', (e) => {
-            if (e.target === quizModal) {
-            quizModal.style.display = 'none';
-        
-            // Показываем иконку темы снова при закрытии модального окна
-            if (window.innerWidth <= 768) {
-            themeToggle.style.display = 'flex';
-                }
+                if (e.target === quizModal) {
+                    quizModal.style.display = 'none';
+                    if (window.innerWidth <= 768) {
+                        themeToggle.style.display = 'flex';
+                    }
                 }
             });
-            // Добавьте вопросы викторины (дополните этот массив)
+            
+            // Добавьте вопросы викторины
             const allQuizQuestions = [
                 {
                     id: 1,
@@ -2492,6 +2848,7 @@
                     type: "история"
                 }
             ];
+            
             // Функции для викторины
             function startQuiz() {
                 usedQuestionIds.clear();
@@ -2500,13 +2857,12 @@
                 quizQuestions = generateRandomQuestions(15);
                 showQuestion();
                 quizModal.style.display = 'block';
-            // Скрываем иконку темы на мобильных устройствах
-            if (window.innerWidth <= 768) {
-            themeToggle.style.display = 'none';
+                // Скрываем иконку темы на мобильных устройствах
+                if (window.innerWidth <= 768) {
+                    themeToggle.style.display = 'none';
+                }
             }
-
-
-            }
+            
             function generateRandomQuestions(count) {
                 const availableQuestions = allQuizQuestions.filter(q => !usedQuestionIds.has(q.id));
                 const selectedQuestions = [];
@@ -2534,6 +2890,7 @@
 
                 return selectedQuestions;
             }
+            
             function showQuestion() {
                 if (currentQuestionIndex >= quizQuestions.length) {
                     showResults();
@@ -2562,6 +2919,7 @@
 
                 document.querySelector('.quiz-next').addEventListener('click', nextQuestion);
             }
+            
             function handleAnswer(e) {
                 const selectedOption = e.target;
                 const selectedIndex = parseInt(selectedOption.dataset.index);
@@ -2588,75 +2946,12 @@
                 // Показываем кнопку "Следующий вопрос"
                 nextButton.style.display = 'block';
             }
+            
             function nextQuestion() {
                 currentQuestionIndex++;
                 showQuestion();
             }
-
-// Модальное окно для картин
-const pictureModal = document.getElementById('pictureModal');
-const fullscreenPicture = document.getElementById('fullscreenPicture');
-const closePictureModal = document.getElementById('closePictureModal');
-const prevPicture = document.getElementById('prevPicture');
-const nextPicture = document.getElementById('nextPicture');
-let currentPictureIndex = 0;
-let currentArtistWorks = [];
-
-// Открытие модального окна с картиной
-function openPictureModal(pictureUrl, works) {
-    currentArtistWorks = works;
-    currentPictureIndex = works.findIndex(work => work.image === pictureUrl);
-    fullscreenPicture.src = pictureUrl;
-    pictureModal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-}
-
-// Закрытие модального окна с картиной
-function closePicture() {
-    pictureModal.style.display = 'none';
-    document.body.style.overflow = '';
-}
-
-// Переключение на предыдущую картину
-function showPrevPicture() {
-    if (currentPictureIndex > 0) {
-        currentPictureIndex--;
-        fullscreenPicture.src = currentArtistWorks[currentPictureIndex].image;
-    }
-}
-
-// Переключение на следующую картину
-function showNextPicture() {
-    if (currentPictureIndex < currentArtistWorks.length - 1) {
-        currentPictureIndex++;
-        fullscreenPicture.src = currentArtistWorks[currentPictureIndex].image;
-    }
-}
-
-// Обработчики событий
-closePictureModal.addEventListener('click', closePicture);
-prevPicture.addEventListener('click', showPrevPicture);
-nextPicture.addEventListener('click', showNextPicture);
-
-// Закрытие модального окна по нажатию Esc
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape' && pictureModal.style.display === 'block') {
-        closePicture();
-    }
-});
-
-// Обновление обработчиков длФя картин в модальном окне художника
-function updateWorkItemHandlers() {
-    document.querySelectorAll('.work-item img').forEach(img => {
-        img.addEventListener('click', function() {
-            const pictureUrl = this.src;
-            const artistName = document.querySelector('.artist-name').textContent;
-            const artist = artistsData.find(a => a.name === artistName);
-            openPictureModal(pictureUrl, artist.works);
-        });
-    });
-}
-
+            
             function showResults() {
                 const percentage = Math.round((score / quizQuestions.length) * 100);
                 let message = '';
@@ -2676,10 +2971,62 @@ function updateWorkItemHandlers() {
 
                 document.querySelector('.quiz-restart').addEventListener('click', startQuiz);
             }
+            
+            // Модальное окно для картин
+            const pictureModal = document.getElementById('pictureModal');
+            const fullscreenPicture = document.getElementById('fullscreenPicture');
+            const closePictureModal = document.getElementById('closePictureModal');
+            const prevPicture = document.getElementById('prevPicture');
+            const nextPicture = document.getElementById('nextPicture');
+            let currentPictureIndex = 0;
+            let currentArtistWorks = [];
+
+            // Открытие модального окна с картиной
+            function openPictureModal(pictureUrl, works) {
+                currentArtistWorks = works;
+                currentPictureIndex = works.findIndex(work => work.image === pictureUrl);
+                fullscreenPicture.src = pictureUrl;
+                pictureModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Закрытие модального окна с картиной
+            function closePicture() {
+                pictureModal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+
+            // Переключение на предыдущую картину
+            function showPrevPicture() {
+                if (currentPictureIndex > 0) {
+                    currentPictureIndex--;
+                    fullscreenPicture.src = currentArtistWorks[currentPictureIndex].image;
+                }
+            }
+
+            // Переключение на следующую картину
+            function showNextPicture() {
+                if (currentPictureIndex < currentArtistWorks.length - 1) {
+                    currentPictureIndex++;
+                    fullscreenPicture.src = currentArtistWorks[currentPictureIndex].image;
+                }
+            }
+
+            // Обработчики событий
+            closePictureModal.addEventListener('click', closePicture);
+            prevPicture.addEventListener('click', showPrevPicture);
+            nextPicture.addEventListener('click', showNextPicture);
+
+            // Закрытие модального окна по нажатию Esc
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && pictureModal.style.display === 'block') {
+                    closePicture();
+                }
+            });
+
             // Инициализация приложения
             init();
         });
     </script>
 </body>
 </html>
-
